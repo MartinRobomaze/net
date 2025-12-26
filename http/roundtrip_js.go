@@ -11,11 +11,12 @@ package http
 import (
 	"errors"
 	"fmt"
-	"github.com/MartinRobomaze/net/http/internal/ascii"
 	"io"
 	"strconv"
 	"strings"
 	"syscall/js"
+
+	"github.com/MartinRobomaze/net/http/internal/ascii"
 )
 
 var uint8Array = js.Global().Get("Uint8Array")
@@ -66,8 +67,8 @@ func (t *Transport) RoundTrip(req *Request) (*Response, error) {
 	// though they are deprecated. Therefore, if any of these are set, we should obey
 	// the contract and dial using the regular round-trip instead. Otherwise, we'll try
 	// to fall back on the Fetch API, unless it's not available.
-	if t.Dial != nil || t.DialContext != nil || t.DialTLS != nil || t.DialTLSContext != nil || jsFetchMissing || jsFetchDisabled {
-		return t.roundTrip(req)
+	if jsFetchMissing || jsFetchDisabled {
+		return roundTrip(req)
 	}
 
 	ac := js.Global().Get("AbortController")
