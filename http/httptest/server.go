@@ -12,9 +12,9 @@ package httptest
 import (
 	"flag"
 	"fmt"
+	"github.com/MartinRobomaze/net/http"
 	"log"
 	"net"
-	"net/http"
 	"os"
 	"strings"
 	"sync"

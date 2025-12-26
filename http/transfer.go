@@ -16,8 +16,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"net/http/internal"
-	"net/http/internal/ascii"
 	"net/textproto"
 	"reflect"
 	"sort"
@@ -25,6 +23,9 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/MartinRobomaze/net/http/internal"
+	"github.com/MartinRobomaze/net/http/internal/ascii"
 
 	"golang.org/x/net/http/httpguts"
 )

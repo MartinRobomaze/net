@@ -9,9 +9,9 @@ package http
 import (
 	"errors"
 	"fmt"
+	"github.com/MartinRobomaze/net/http/internal/ascii"
 	"log"
 	"net"
-	"net/http/internal/ascii"
 	"net/textproto"
 	"strconv"
 	"strings"

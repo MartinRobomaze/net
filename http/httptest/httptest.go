@@ -8,8 +8,8 @@ package httptest
 import (
 	"bufio"
 	"bytes"
+	"github.com/MartinRobomaze/net/http"
 	"io"
-	"net/http"
 	"strings"
 )
 

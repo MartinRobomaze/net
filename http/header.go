@@ -9,8 +9,8 @@
 package http
 
 import (
+	"github.com/MartinRobomaze/net/http/internal/ascii"
 	"io"
-	"net/http/internal/ascii"
 	"net/textproto"
 	"sort"
 	"strings"

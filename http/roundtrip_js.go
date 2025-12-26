@@ -11,8 +11,8 @@ package http
 import (
 	"errors"
 	"fmt"
+	"github.com/MartinRobomaze/net/http/internal/ascii"
 	"io"
-	"net/http/internal/ascii"
 	"strconv"
 	"strings"
 	"syscall/js"
