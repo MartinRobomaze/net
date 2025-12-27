@@ -66,7 +66,10 @@ func (t *Transport) RoundTrip(req *Request) (*Response, error) {
 	// though they are deprecated. Therefore, if any of these are set, we should obey
 	// the contract and dial using the regular round-trip instead. Otherwise, we'll try
 	// to fall back on the Fetch API, unless it's not available.
-	if t.Dial != nil || t.DialContext != nil || t.DialTLS != nil || t.DialTLSContext != nil || jsFetchMissing || jsFetchDisabled {
+
+	// TINYGO: Dial/DialTLS & DialContext/DialTLSContext are not present in tinygo Transport struct, therefore the
+	// corresponding if statements were removed
+	if jsFetchMissing || jsFetchDisabled {
 		return t.roundTrip(req)
 	}
 
